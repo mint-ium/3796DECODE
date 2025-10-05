@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @TeleOp
-public class Shooter extends OpMode {
+public class ShooterTriggerVariable extends OpMode {
 
     double velocity;
 
@@ -19,17 +19,17 @@ public class Shooter extends OpMode {
     @Override
     public void loop() {
 
-        if(gamepad1.left_trigger > 0.15){
+        if (gamepad1.left_trigger > 0.15) {
             velocity = gamepad1.left_trigger * -1.0;
             shooter.setMotorSpeed(velocity);
-        }else{
+        } else {
             shooter.setMotorSpeed(0);
         }
 
-        if(gamepad1.right_trigger > 0.15){
+        if (gamepad1.right_trigger > 0.15) {
             velocity = gamepad1.right_trigger;
             shooter.setMotorSpeed(velocity);
-        }else{
+        } else {
             shooter.setMotorSpeed(0);
         }
     }
