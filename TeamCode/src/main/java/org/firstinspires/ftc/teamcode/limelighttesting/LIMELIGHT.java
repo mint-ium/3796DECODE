@@ -24,7 +24,8 @@ public class LIMELIGHT extends OpMode {
         limelight.start();
         limelight.pipelineSwitch(0);
     }
-    int mode=0;
+
+    int mode = 0;
 
     @Override
     public void loop() {
@@ -35,29 +36,31 @@ public class LIMELIGHT extends OpMode {
         //Protects against nulls and tells if tag is detected
         if (llResult != null && llResult.isValid()) {
             telemetry.addData("Status", "AprilTag(s) detected");
-            telemetry.addData("Tx","%.1f", llResult.getTx());
+            telemetry.addData("Tx", "%.1f", llResult.getTx());
 
-        }else{
+        } else {
             telemetry.addData("Status", "No AprilTags detected");
         }
-        
-        telemetry.addData("Pipeline", mode);
-            if (gamepad1.dpadUpWasPressed()) {
-                if (mode >= 3) {
-                    mode = 0;
-                } else {
-                    mode += 1;
-                    limelight.pipelineSwitch(mode);
-                }
-            } else if (gamepad1.dpadDownWasPressed()) {
-                if (mode <= -1) {
-                    mode = 0;
-                } else {
-                    mode -= 1;
-                    limelight.pipelineSwitch(mode);
-                }
 
+        telemetry.addData("Pipeline", mode);
+        if (gamepad1.dpadUpWasPressed()) {
+            if (mode == 2) {
+                mode = 0;
+                limelight.pipelineSwitch(mode);
+            } else {
+                mode += 1;
+                limelight.pipelineSwitch(mode);
             }
+        } else if (gamepad1.dpadDownWasPressed()) {
+            if (mode == 0) {
+                mode = 0;
+                limelight.pipelineSwitch(mode);
+            } else {
+                mode -= 1;
+                limelight.pipelineSwitch(mode);
+            }
+
+        }
 
         int tagID = -1;
         //Get the ID of the April Tag
@@ -66,7 +69,7 @@ public class LIMELIGHT extends OpMode {
             tagID = fr.getFiducialId();
         }
         //if tag is ____ do this
-        if(tagID == 20 || tagID == 24 ){
+        if (tagID == 20 || tagID == 24) {
             telemetry.addData("Valid ID", tagID);
         }
 
