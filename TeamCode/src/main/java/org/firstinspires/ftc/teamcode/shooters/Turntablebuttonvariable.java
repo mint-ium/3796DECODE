@@ -1,14 +1,15 @@
 package org.firstinspires.ftc.teamcode.shooters;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-
+@Disabled
 @TeleOp
 public class Turntablebuttonvariable extends OpMode {
     private DcMotor motor;
-    double velocity;
+    int velocity;
 
     @Override
     public void init() {
@@ -24,11 +25,10 @@ public class Turntablebuttonvariable extends OpMode {
         telemetry.addData("Velocity", velocity);
 
         if(gamepad1.left_trigger > 0.05){
-            velocity = velocity * -1.0;
+            velocity = velocity * -1;
             motor.setPower(velocity);
 
         }else if(gamepad1.right_trigger > 0.05){
-            velocity = velocity * 1.0;
             motor.setPower(velocity);
         }else{
             motor.setPower(0);

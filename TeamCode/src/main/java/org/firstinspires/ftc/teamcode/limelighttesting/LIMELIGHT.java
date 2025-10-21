@@ -37,6 +37,9 @@ public class LIMELIGHT extends OpMode {
         if (llResult != null && llResult.isValid()) {
             telemetry.addData("Status", "AprilTag(s) detected");
             telemetry.addData("Tx", "%.1f", llResult.getTx());
+            //reduces tx to a single digi number
+            int tx = (int) llResult.getTx();
+            telemetry.addData("tx",tx);
 
         } else {
             telemetry.addData("Status", "No AprilTags detected");
@@ -53,7 +56,6 @@ public class LIMELIGHT extends OpMode {
             }
         } else if (gamepad1.dpadDownWasPressed()) {
             if (mode == 0) {
-                mode = 0;
                 limelight.pipelineSwitch(mode);
             } else {
                 mode -= 1;

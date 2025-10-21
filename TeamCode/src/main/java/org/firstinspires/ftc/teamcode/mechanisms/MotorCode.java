@@ -8,7 +8,7 @@ public class MotorCode {
     private DcMotor motor;
 
     public void init(HardwareMap hwMap) {
-        motor = hwMap.get(DcMotor.class, "motorGo");
+        motor = hwMap.get(DcMotor.class, "motor1");
         motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
     }
