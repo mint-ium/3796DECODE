@@ -19,6 +19,7 @@ public class LimelightTurnTable extends OpMode {
 
         motorTurn = hardwareMap.get(DcMotor.class, "motorTurn");
         motorTurn.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        motorTurn.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         limelight = hardwareMap.get(Limelight3A.class, "limelight");
     }
@@ -50,9 +51,9 @@ public class LimelightTurnTable extends OpMode {
         }
 
         if(tx > 5){
-            motorTurn.setPower(0.01);
+            motorTurn.setPower(0.1);
         }else if (tx < -5){
-            motorTurn.setPower(-0.01);
+            motorTurn.setPower(-0.1);
         }else{
             motorTurn.setPower(0);
         }
