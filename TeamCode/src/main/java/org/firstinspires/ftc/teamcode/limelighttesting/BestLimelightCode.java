@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import java.util.List;
 
 @TeleOp
-public class LIMELIGHT extends OpMode {
+public class BestLimelightCode extends OpMode {
     private Limelight3A limelight;
 
     @Override

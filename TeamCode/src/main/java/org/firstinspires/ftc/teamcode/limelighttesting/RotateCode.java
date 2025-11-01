@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import java.util.List;
 
 @TeleOp
-public class LimelightRotations extends OpMode {
+public class RotateCode extends OpMode {
 
     private Servo CRservo;
     private Limelight3A limelight;
