@@ -26,8 +26,7 @@ public class BestLimelightCode extends OpMode {
     }
 
     int mode = 0;
-
-    @Override
+   @Override
     public void loop() {
         //Setting Up Fiducial Results
         LLResult llResult = limelight.getLatestResult();

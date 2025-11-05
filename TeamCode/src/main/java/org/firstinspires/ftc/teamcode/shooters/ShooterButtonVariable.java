@@ -26,12 +26,19 @@ public class ShooterButtonVariable extends OpMode {
         }else{
             shooter.setMotorSpeed(0);
         }
-        if(gamepad1.aWasPressed()){
+        if(gamepad1.xWasPressed()){
             velocity += 0.1;
         }
 
         if(gamepad1.bWasPressed()){
             velocity += -0.1;
+        }
+        if(gamepad1.yWasPressed()){
+            velocity += 0.05;
+        }
+
+        if(gamepad1.aWasPressed()){
+            velocity += -0.05;
         }
     }
 }
