@@ -35,7 +35,7 @@ public class DistanceCalculator extends OpMode {
             //Prints Total Area (Ta)
             double ta = llResult.getTa();
             double distance = (161.1*Math.pow(ta,-0.5858));
-            //         constant^^^                 ^^^
+            //         constant^^^          constant^^^
             telemetry.addData("ta",ta);
 
             //print distance (cm)
