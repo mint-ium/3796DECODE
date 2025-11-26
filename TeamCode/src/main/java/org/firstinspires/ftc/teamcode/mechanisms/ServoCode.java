@@ -1,10 +1,12 @@
 package org.firstinspires.ftc.teamcode.mechanisms;
 
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
 public class ServoCode {
     private Servo servoPos;
+
 
     public void init(HardwareMap hwMap){
         servoPos = hwMap.get(Servo.class, "servoPos");

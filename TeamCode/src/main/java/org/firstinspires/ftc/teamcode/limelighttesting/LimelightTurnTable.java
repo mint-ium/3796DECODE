@@ -50,10 +50,10 @@ public class LimelightTurnTable extends OpMode {
             telemetry.addData("Status", "No AprilTags detected");
         }
 
-        if(tx > 5){
-            motorTurn.setPower(0.1);
-        }else if (tx < -5){
-            motorTurn.setPower(-0.1);
+        if(tx > 2){
+            motorTurn.setPower(-0.2);
+        }else if (tx < -2){
+            motorTurn.setPower(0.2);
         }else{
             motorTurn.setPower(0);
         }

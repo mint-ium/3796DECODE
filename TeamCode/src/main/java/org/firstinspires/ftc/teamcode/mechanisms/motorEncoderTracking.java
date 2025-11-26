@@ -12,7 +12,6 @@ public class motorEncoderTracking extends OpMode {
     public void init() {
         motor1 = hardwareMap.get(DcMotor.class , "motor1");
         motor1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        motor1.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
 
     @Override
@@ -36,6 +35,7 @@ public class motorEncoderTracking extends OpMode {
         telemetry.addData("Encoder Position", position);
         telemetry.addData("Encoder Revolutions", revolutions);
         telemetry.addData("Encoder Angle (Degrees)", angle);
+        telemetry.addData("Revolutions: ", revolutions);
         telemetry.addData("Encoder Angle - Normalized (Degrees)", angleNormalized);
 
 

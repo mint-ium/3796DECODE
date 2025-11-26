@@ -36,6 +36,7 @@ public class BestLimelightCode extends OpMode {
         if (llResult != null && llResult.isValid()) {
             telemetry.addData("Status", "AprilTag(s) detected");
             telemetry.addData("Tx", "%.1f", llResult.getTx());
+
             //reduces tx to a single digi number
             int tx = (int) llResult.getTx();
             telemetry.addData("tx",tx);
